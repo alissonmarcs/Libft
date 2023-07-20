@@ -9,8 +9,6 @@ int main()
 
     i_ptr = &n;
     ch_p = (char *)i_ptr;
-    memset(i_ptr, 'A', 2);
-
     while (ch_p < (char *) (i_ptr + 1))
         printf("%d\n", *ch_p++);
     return 0;
