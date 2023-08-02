@@ -1,16 +1,21 @@
-void ft_putchar_fd(char c, int fd);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/02 11:24:13 by almarcos          #+#    #+#             */
+/*   Updated: 2023/08/02 11:24:39 by almarcos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-	while(*s)
+	while (*s)
 		ft_putchar_fd(*s++, fd);
-}
-
-int main()
-{
-	ft_putstr_fd("alisson\n", 1);
 }
