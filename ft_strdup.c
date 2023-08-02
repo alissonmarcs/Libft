@@ -6,7 +6,7 @@
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 14:18:46 by almarcos          #+#    #+#             */
-/*   Updated: 2023/07/28 16:16:32 by almarcos         ###   ########.fr       */
+/*   Updated: 2023/08/02 16:27:51 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,12 @@
 char	*ft_strdup(const char *s)
 {
 	size_t	len;
-	size_t	i;
-	char	*ptr;
+	char	*str;
 
-	len = ft_strlen(s);
-	ptr = (char *)malloc(len + 1);
-	i = 0;
-	while (s[i])
-	{
-		ptr[i] = s[i];
-		i++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
+	if (!s)
+		return (NULL);
+	len = ft_strlen(s) + 1;
+	str = (char *) ft_calloc(len, sizeof (char));
+	ft_strlcpy(str, s, len);
+	return (str);
 }
