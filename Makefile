@@ -6,7 +6,7 @@
 #    By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 10:35:42 by almarcos          #+#    #+#              #
-#    Updated: 2023/08/02 17:28:36 by almarcos         ###   ########.fr        #
+#    Updated: 2023/08/03 16:57:24 by almarcos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SOURCES = ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c \
 	ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
 	ft_substr.c ft_substr.c ft_putchar_fd.c ft_putstr_fd.c \
-	ft_strjoin.c ft_strtrim.c
+	ft_strjoin.c ft_strtrim.c ft_split.c
 	
 
 OBJECTS = $(SOURCES:.c=.o)
