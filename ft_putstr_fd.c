@@ -6,7 +6,7 @@
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 11:24:13 by almarcos          #+#    #+#             */
-/*   Updated: 2023/08/02 11:24:39 by almarcos         ###   ########.fr       */
+/*   Updated: 2023/08/05 14:31:24 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-	while (*s)
-		ft_putchar_fd(*s++, fd);
+	write(fd, s, ft_strlen(s));
 }
