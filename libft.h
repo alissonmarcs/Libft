@@ -6,7 +6,7 @@
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 11:01:10 by almarcos          #+#    #+#             */
-/*   Updated: 2023/08/04 09:46:24 by almarcos         ###   ########.fr       */
+/*   Updated: 2023/08/05 14:38:14 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 // test only, remove before submit
 
+# include <limits.h>
 # include <stdio.h>
 # include <string.h>
 
@@ -63,4 +64,9 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 
 char	**ft_split(char const *s, char c);
+
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_putendl_fd(char *s, int fd);
 #endif
