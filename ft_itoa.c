@@ -6,81 +6,54 @@
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:13:39 by almarcos          #+#    #+#             */
-/*   Updated: 2023/08/05 17:42:28 by almarcos         ###   ########.fr       */
+/*   Updated: 2023/08/06 13:58:40 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// char *ft_itoa_my(int n)
-// {
-// 	char *new_str;
-// 	long tmp;
-// 	size_t size_to_alloc;
+static int	ft_is_negative(long n)
+{
+	return (n < 0);
+}
 
-// 	tmp = n;
-// 	size_to_alloc = NULL;
-// 	if (n < 0)
-// 	{
-// 		size_to_alloc++;
-// 		n = -n;
-// 	}
-// 	while (n)
-// 	{
-// 		size_to_alloc++;
-// 		n /= 10;
-// 	}
-// 	new_str = ft_calloc(size_to_alloc + 1, sizeof (char));
-// 	if (!new_str)
-// 		return (NULL);
-// 	new_str[size_to_alloc--] = '\0';
-// 	while (tmp)
-// 	{
-// 		new_str[size_to_alloc--] = tmp % 10 + '0';
-// 		tmp /= 10;
-// 	}
-// 	if (size_to_alloc == 0 && new_str[1] == '\0')
-// 		new_str[size_to_alloc] = '0';
-// 	else if (size_to_alloc == 0 && new_str[1] != '\0')
-// 		new_str[size_to_alloc] = '-';
-// 	return (new_str);
-// }
+static size_t	ft_count_digits(long n)
+{
+	size_t	digits;
+
+	digits = 0;
+	if (n == 0)
+		digits++;
+	while (n)
+	{
+		digits++;
+		n /= 10;
+	}
+	return (digits);
+}
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	long	nbr;
-	size_t	size;
+	char	*new_str;
+	long	temp;
+	int		is_negative;
+	size_t	size_to_alloc;
 
-	nbr = n;
-	size = n > 0 ? 0 : 1;
-	nbr = nbr > 0 ? nbr : -nbr;
-	while (n)
+	temp = n;
+	is_negative = ft_is_negative(temp);
+	size_to_alloc = ft_count_digits(temp) + is_negative;
+	new_str = ft_calloc(size_to_alloc + 1, sizeof(char));
+	if (temp == 0)
+		new_str[0] = '0';
+	if (is_negative)
 	{
-		n /= 10;
-		size++;
+		new_str[0] = '-';
+		temp = -temp;
 	}
-	if (!(str = (char *)malloc(size + 1))) // to alloc 3
-		return (0);
-	*(str + size--) = '\0'; // str[2]
-	while (nbr > 0)
+	while (temp)
 	{
-		*(str + size--) = nbr % 10 + '0';// str[1]
-		nbr /= 10;
+		new_str[--size_to_alloc] = (temp % 10) + '0';
+		temp /= 10;
 	}
-	if (size == 0 && str[1] == '\0')
-		*(str + size) = '0';
-	else if (size == 0 && str[1] != '\0')
-		*(str + size) = '-';
-	return (str);
-}
-
-int main()
-{
-	char *p;
-
-	p = ft_itoa(-2);
-	printf("%s\n", p);
-
-	free(p);
+	return (new_str);
 }
