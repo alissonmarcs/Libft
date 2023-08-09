@@ -6,7 +6,7 @@
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 14:22:35 by almarcos          #+#    #+#             */
-/*   Updated: 2023/08/04 14:04:19 by almarcos         ###   ########.fr       */
+/*   Updated: 2023/08/06 13:55:15 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,6 @@ static char	**ft_alloc_words(char **array, const char *s, int c)
 	}
 	array[index] = NULL;
 	return (array);
-}
-
-static void	*ft_free_words(char **array)
-{
-	size_t	i;
-
-	i = 0;
-	while (array[i])
-		free(array[i++]);
-	free(array);
-	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)

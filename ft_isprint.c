@@ -6,11 +6,11 @@
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 10:17:17 by almarcos          #+#    #+#             */
-/*   Updated: 2023/07/20 10:17:19 by almarcos         ###   ########.fr       */
+/*   Updated: 2023/08/09 16:02:22 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);
 }

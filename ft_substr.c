@@ -6,7 +6,7 @@
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:31:05 by almarcos          #+#    #+#             */
-/*   Updated: 2023/08/02 16:23:46 by almarcos         ###   ########.fr       */
+/*   Updated: 2023/08/06 14:42:20 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (ft_strdup(s + start));
 }
-
