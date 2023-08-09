@@ -30,6 +30,6 @@ bonus: $(BONUS_OBJECTS)
 	ar rcs $(NAME) $@
 ```
 
-A regra `%.o: %.c libft.h` compila objetos, sejam eles do mandatório ou não. O requisito do `$(NAME)` são objetos, então o make irá procurar pela regra que compila objetos. O requisito do bonus são objetos, então o make irá procurar pela regra que compila objetos.
+A regra `%.o: %.c libft.h` compila objetos, sejam eles do mandatório ou não. O requisito da regra `$(NAME): $(OBJECTS)` são objetos, então o make irá procurar pela regra que compila objetos. O requisito da regra `bonus: $(BONUS_OBJECTS)` são objetos, então o make irá procurar pela regra que compila objetos.
 
-Na chamada `$(NAME): $(BONUS_OBJECTS)`, na regra de compilação de objetos, os `%.o` vão assumir o que está na variável `$(OBJECTS)`. Na chamada `bonus: $(BONUS_OBJECTS)`, na regra de compilação dos objetos, os `%.o` vão assumir o que está na variável `$(BONUS_OBJECTS)`.
+Ao executar a regra `$(NAME): $(OBJECTS)`, o make vai chamar a regra que compila objetos ***para cada objeto da variável*** `$(OBJECTS)`.

@@ -6,7 +6,7 @@
 #    By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 10:35:42 by almarcos          #+#    #+#              #
-#    Updated: 2023/08/08 17:44:21 by almarcos         ###   ########.fr        #
+#    Updated: 2023/08/09 15:49:11 by almarcos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,3 +52,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus
