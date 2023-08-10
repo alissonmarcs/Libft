@@ -6,7 +6,7 @@
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 14:13:39 by almarcos          #+#    #+#             */
-/*   Updated: 2023/08/09 15:46:21 by almarcos         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:24:43 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ char	*ft_itoa(int n)
 	is_negative = ft_is_negative(temp);
 	size_to_alloc = ft_count_digits(temp) + is_negative;
 	new_str = ft_calloc(size_to_alloc + 1, sizeof(char));
+	if (!new_str)
+		return (NULL);
 	if (temp == 0)
 		new_str[0] = '0';
 	if (is_negative)
