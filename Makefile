@@ -6,13 +6,14 @@
 #    By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 10:35:42 by almarcos          #+#    #+#              #
-#    Updated: 2023/08/09 15:49:11 by almarcos         ###   ########.fr        #
+#    Updated: 2023/08/11 17:34:33 by almarcos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
+BIN = ./bin/
 
 SOURCES = ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	ft_isdigit.c ft_isprint.c ft_memset.c ft_strlen.c \
@@ -29,19 +30,21 @@ BONUS_SOURCES = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
 	ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
 	ft_lstmap_bonus.c
 
-OBJECTS = $(SOURCES:.c=.o)
-
-BONUS_OBJECTS = $(BONUS_SOURCES:.c=.o)
+OBJECTS = $(addprefix $(BIN), $(SOURCES:.c=.o))
+BONUS_OBJECTS = $(addprefix $(BIN), $(BONUS_SOURCES:.c=.o))
 
 INCLUDES = .
 
-all: $(NAME)
+all: $(BIN) $(NAME)
+
+$(BIN):
+	mkdir -p $(BIN)
 
 $(NAME): $(OBJECTS)
 
 bonus: $(BONUS_OBJECTS)
 
-%.o: %.c libft.h
+$(BIN)%.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES)
 	ar rcs $(NAME) $@
 
