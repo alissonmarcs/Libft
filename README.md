@@ -1,5 +1,5 @@
 # Libft
-First project of 42 School, it is about create our own C library with some functions from Standard C Library and additional others. I learned string and memory manipulation, linked lists, pointers, structs, typedefs and a lot more.
+First project of 42 School, it is about create our own C library with some functions from Standard C Library and additional others. I learned string and memory manipulation, linked lists, pointers, structs, typedefs and a lot more. Each function implementation is in its own .c file.
 
 ## Functions
 | Funcion | Description |
