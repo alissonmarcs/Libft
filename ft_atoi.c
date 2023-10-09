@@ -6,7 +6,7 @@
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:15:31 by almarcos          #+#    #+#             */
-/*   Updated: 2023/07/28 16:35:23 by almarcos         ###   ########.fr       */
+/*   Updated: 2023/10/09 11:52:14 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_atoi(const char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 		sign = 1 - 2 * (str[i++] == '-');
-	while (str[i] >= '0' && str[i] <= '9')
+	while (ft_isdigit(str[i]))
 		result = 10 * result + (str[i++] - '0');
 	return (result * sign);
 }
