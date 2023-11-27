@@ -1,5 +1,5 @@
 # Libft
-First project of 42 School, it is about create our own C library with some functions from Standard C Library and additional others. I learned string and memory manipulation, linked lists, pointers, structs, typedefs and a lot more. Each function implementation is in its own .c file.
+This is my own standard library for C language! It is a first project of 42 and will be used in next projects. Every function is implemented in it own single file.
 
 ## Functions
 | Funcion | Description |
@@ -50,32 +50,24 @@ First project of 42 School, it is about create our own C library with some funct
 |[`ft_lstdelone`](https://github.com/alissonmarcs/Libft/blob/main/ft_lstdelone_bonus.c)| Delete one node. |
 |[`ft_lstclear`](https://github.com/alissonmarcs/Libft/blob/main/ft_lstclear_bonus.c)| Delete a node and their sucessors.|
 |[`ft_lstiter`](https://github.com/alissonmarcs/Libft/blob/main/ft_lstiter_bonus.c)| Call function `f` to every node in list.|
-|[`ft_lstmap`](https://github.com/alissonmarcs/Libft/blob/main/ft_lstmap_bonus.c)| Map every node of a list in a new list.|
+|[`ft_lstmap`](https://github.com/alissonmarcs/Libft/blob/main/bonus/ft_lstmap_bonus.c)| Map every node of a list in a new list.|
 
 ## How to use
 
-Clone this repository:
+Follow these commands to compile the library:
+
 ```shell
-$ git clone https://github.com/alissonmarcs/Libft.git
+git clone https://github.com/alissonmarcs/Libft.git
+cd Libft
+make bonus
 ```
 
-Run `make` on it:
-```shell
-$ cd Libft
-$ make
-```
+Compiling with `make bonus` you will be able to use linked-list functions.
 
-If you want to use linked lists, run `make bonus`:
-```shell
-$ make bonus
-```
+Supposing you have a `main()` defined in a `main.c` that call one of the functions above, compile it as follows:
 
-Include `libft.h` in your `.c`:
 ```c
-#include "libft.h"
+cc main.c libft.a
 ```
 
-Compile your `.c` with the library:
-```shell
-$ cc my_program.c libft.a
-```
+Of course, include `libft.h` in your `main.c`.
