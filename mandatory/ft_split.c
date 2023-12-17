@@ -12,6 +12,26 @@
 
 #include "libft.h"
 
+static size_t	ft_word_count(const char *s, int c);
+static char		**ft_alloc_words(char **array, const char *s, int c);
+
+char	**ft_split(char const *s, char c)
+{
+	char	**array;
+	size_t	words;
+
+	if (!s)
+		return (NULL);
+	words = ft_word_count(s, c);
+	array = (char **)ft_calloc((words + 1), sizeof(char *));
+	if (!array)
+		return (NULL);
+	while (*s == (unsigned char)c && *s)
+		s++;
+	ft_alloc_words(array, s, c);
+	return (array);
+}
+
 static size_t	ft_word_count(const char *s, int c)
 {
 	size_t	words;
@@ -52,22 +72,5 @@ static char	**ft_alloc_words(char **array, const char *s, int c)
 			s++;
 	}
 	array[index] = NULL;
-	return (array);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**array;
-	size_t	words;
-
-	if (!s)
-		return (NULL);
-	words = ft_word_count(s, c);
-	array = (char **)ft_calloc((words + 1), sizeof(char *));
-	if (!array)
-		return (NULL);
-	while (*s == (unsigned char)c && *s)
-		s++;
-	ft_alloc_words(array, s, c);
 	return (array);
 }
